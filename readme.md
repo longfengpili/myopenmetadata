@@ -3,6 +3,14 @@
 docker-compose -f docker-compose-postgres.yml -f docker-compose-company.yml up -d
 ```
 
+# 镜像导出导入
+```
+set OMDVERSION=1.5.7
+docker save -o openmetadata-%OMDVERSION%.tar docker.getcollate.io/openmetadata/server:%OMDVERSION% docker.getcollate.io/openmetadata/ingestion:%OMDVERSION% docker.getcollate.io/openmetadata/postgresql:%OMDVERSION%
+
+docker load -i openmetadata-1.5.7.tar
+```
+
 # data quality
 + [docker compose](https://github.com/open-metadata/OpenMetadata/releases)
 + Strategy
@@ -80,13 +88,4 @@ DEFAULT_AIRFLOW_HEADERS = {
     "Content-Type": "application/json",
     "Authorization": f"Basic {auth_base64}",
 }
-```
-
-# 修改时区
-```
-docker-compose -f docker-compose-postgres.yml -f docker-compose-company.yml exec -uroot -it openmetadata-server bash
-apk update
-apk add tzdata
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-date
 ```
