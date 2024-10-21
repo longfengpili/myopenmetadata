@@ -88,6 +88,7 @@ services:
 
   ingestion:
     environment:
+      TZ: Asia/Shanghai
       # Database configuration for postgresql
       AIRFLOW_DB: *airflow-db
       DB_USER: *airflow-user
