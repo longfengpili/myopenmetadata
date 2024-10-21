@@ -81,3 +81,12 @@ DEFAULT_AIRFLOW_HEADERS = {
     "Authorization": f"Basic {auth_base64}",
 }
 ```
+
+# 修改时区
+```
+docker-compose -f docker-compose-postgres.yml -f docker-compose-company.yml exec -uroot -it openmetadata-server bash
+apk update
+apk add tzdata
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+date
+```
