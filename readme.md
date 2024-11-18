@@ -5,10 +5,10 @@ docker-compose -f docker-compose-postgres.yml -f docker-compose-company.yml up -
 
 # 镜像导出导入
 ```
-set OMDVERSION=1.5.7
-docker save -o openmetadata-%OMDVERSION%.tar docker.getcollate.io/openmetadata/server:%OMDVERSION% docker.getcollate.io/openmetadata/ingestion:%OMDVERSION% docker.getcollate.io/openmetadata/postgresql:%OMDVERSION%
+set OMDVERSION=1.5.11
+docker save -o images/openmetadata-%OMDVERSION%.tar docker.getcollate.io/openmetadata/server:%OMDVERSION% docker.getcollate.io/openmetadata/ingestion:%OMDVERSION% docker.getcollate.io/openmetadata/postgresql:%OMDVERSION%
 
-docker load -i openmetadata-1.5.7.tar
+docker load -i images/openmetadata-1.5.11.tar
 ```
 
 # data quality
