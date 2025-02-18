@@ -1,4 +1,12 @@
-if [ "\$1" = "delete" ]; then
+# !/bin/bash
+# @Author: longfengpili
+# @Date:   2025-02-18 15:02:04
+# @Last Modified by:   longfengpili
+# @Last Modified time: 2025-02-18 15:45:17
+
+
+if [ "$1" = "delete" ]; then
+    echo "delete"
     rm -rf ./volumes
 fi
 
